@@ -15,6 +15,7 @@ https://localhost:5001/healthchecks-ui
 
 # Stack 
 # Backend
+* Clean Arquitecture
 * .Net Core (5.0)
 * Generic Repository Pattern
 * Entity Framework Core
