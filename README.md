@@ -17,8 +17,10 @@ https://localhost:5001/healthchecks-ui
 # Backend
 * .Net Core (5.0)
 * Generic Repository Pattern
+* Entity Framework Core
+* Linq
 * Automapper
-* ILoger (Nlog)
+* ILogger (Nlog)
 * HttpClient factory
 * Http Retry-Policy (Polly extension)
 * SQL Server Express
