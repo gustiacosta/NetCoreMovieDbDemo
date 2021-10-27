@@ -111,10 +111,10 @@ namespace DotNetCoolMovies.ApiService.Controllers
 
                 if (movies == null)
                 {
-                    return Ok(new ResponseModel
+                    return NotFound(new ResponseModel
                     {
                         Message = $"No movies found with {searchtext}",
-                        StatusCode = StatusCodes.Status200OK,
+                        StatusCode = StatusCodes.Status404NotFound,
                         ElapsedTime = stopWatch.ElapsedMilliseconds,
                     });
                 }

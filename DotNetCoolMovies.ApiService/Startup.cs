@@ -2,6 +2,7 @@ using DotNetCoolMovies.Data;
 using DotNetCoolMovies.Data.Repository;
 using DotNetCoolMovies.Data.Services;
 using DotNetCoolMovies.Infrastructure;
+using DotNetCoolMovies.Infrastructure.AutoMapper;
 using DotNetCoolMovies.Infrastructure.Middleware;
 using DotNetCoolMovies.Infrastructure.Validators;
 using FluentValidation.AspNetCore;
@@ -45,7 +46,7 @@ namespace DotNetCoolMovies.ApiService
 
             services.AddDbContext<CoolMoviesAppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLConn")));
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(options => options.AddProfile(new AutomapperConfig()));
 
             services.AddMvc().AddFluentValidation(mvcConf => mvcConf.RegisterValidatorsFromAssemblyContaining<ModelValidators>());
 
