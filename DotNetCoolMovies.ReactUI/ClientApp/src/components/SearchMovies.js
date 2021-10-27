@@ -74,9 +74,9 @@ export class SearchMovies extends Component {
         const { MOVIES_ALL_URL, MOVIES_SEARCH_URL } = process.env
 
         if (searchText === null || searchText === "") {
-            url = 'https://localhost:44366/movies/all'
+            url = 'https://localhost:5001/movies/all'
         } else {
-            url = 'https://localhost:44366/movies/search/' + searchText
+            url = 'https://localhost:5001/movies/search/' + searchText
         }
 
         fetch(url)
