@@ -57,7 +57,7 @@ namespace DotNetCoolMovies.Data
                 entity.ToTable("MovieActors");
 
                 // -----------------------------------------------
-                // Auto-include entity relation because it will be
+                // Auto-include related entity because it will be
                 // always used in queries
                 // -----------------------------------------------
                 entity.Navigation(n => n.Actor).AutoInclude();
@@ -80,7 +80,7 @@ namespace DotNetCoolMovies.Data
                 entity.ToTable("MovieGenres");
 
                 // -----------------------------------------------
-                // Auto-include entity relation because it will be
+                // Auto-include related entity because it will be
                 // always used in queries
                 // -----------------------------------------------
                 entity.Navigation(n => n.Genre).AutoInclude();

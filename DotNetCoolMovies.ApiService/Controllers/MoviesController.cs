@@ -44,6 +44,9 @@ namespace DotNetCoolMovies.ApiService.Controllers
                 Stopwatch stopWatch = new();
                 stopWatch.Start();
 
+                // -----------------------------------------------------------------------------------------------------------
+                // get movie list, including related entities (sub entities are added automatically upon dbcontext config.)
+                // -----------------------------------------------------------------------------------------------------------
                 var _movies = await _service.GetAsync<Movie>(null, o => o.OrderBy(c => c.Title), null, null, inc => inc.Actors, inc => inc.Genres);
                 var movies = _mapper.Map<IEnumerable<MovieModel>>(_movies);
 
@@ -94,6 +97,9 @@ namespace DotNetCoolMovies.ApiService.Controllers
                 Stopwatch stopWatch = new();
                 stopWatch.Start();
 
+                // -----------------------------------------------------------------------------------------------------------
+                // search movies, including related entities (sub entities are added automatically upon dbcontext config.)
+                // -----------------------------------------------------------------------------------------------------------
                 var _movies = await _service.GetAsync<Movie>(c => (c.Title.ToLower().Contains(searchtext)) ||
                                                             (c.Actors.Any(c => c.Actor.Name.ToLower().Contains(searchtext)) ||
                                                             (c.Genres.Any(c => c.Genre.Name.ToLower().Contains(searchtext)))),

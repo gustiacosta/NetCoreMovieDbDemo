@@ -13,6 +13,8 @@ namespace DotNetCoolMovies.Core.Models
         public long Id { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
+        public string ActorListSimple { get; set; }
+        public string GenreListSimple { get; set; }
 
         public IEnumerable<ActorModel> Actors { get; set; }
         public IEnumerable<GenreModel> Genres { get; set; }

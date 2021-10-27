@@ -1,7 +1,4 @@
-﻿using DotNetCoolMovies.Core.Domain;
-using DotNetCoolMovies.Core.Models;
-using Newtonsoft.Json;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace DotNetCoolMovies.Infrastructure.Helpers
@@ -9,36 +6,19 @@ namespace DotNetCoolMovies.Infrastructure.Helpers
     public class HttpClientHelper
     {
 
-        //public static async Task<CurrencyRateModel> CallExternalRateEndpoint(Currency currency, IHttpClientFactory _httpClientFactory)
-        //{
-        //    var httpClient = _httpClientFactory.CreateClient(Constants.HttpClientFactoryName);
-        //    using (var httpResponse = await httpClient.GetAsync(currency.RateApiEndpoint))
-        //    {
-        //        if (httpResponse.IsSuccessStatusCode)
-        //        {
-        //            var content = await httpResponse.Content.ReadAsStringAsync();
-        //            return CurrencyHelper.ParseData(content, currency.Code, "");
-        //        }
-        //    }
+        public static async Task<string> CallExternalRateEndpoint(string param, IHttpClientFactory _httpClientFactory, string url)
+        {
+            var httpClient = _httpClientFactory.CreateClient(Constants.HttpClientFactoryName);
+            using (var httpResponse = await httpClient.GetAsync(url))
+            {
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    return await Task.FromResult(content);
+                }
+            }
 
-        //    return null;
-        //}
-
-        //public static async Task<ResponseModel> CallRatesMicroservice(Currency currency, IHttpClientFactory _httpClientFactory, string endpoint)
-        //{
-        //    var httpClient = _httpClientFactory.CreateClient(Constants.HttpClientFactoryName);
-        //    using (var httpResponse = await httpClient.GetAsync(endpoint))
-        //    {
-        //        if (httpResponse.IsSuccessStatusCode)
-        //        {
-        //            var content = await httpResponse.Content.ReadAsStringAsync();
-        //            var responseModel = JsonConvert.DeserializeObject<ResponseModel>(content);
-
-        //            return responseModel;
-        //        }
-        //    }
-
-        //    return null;
-        //}
+            return string.Empty;
+        }
     }
 }
