@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoolMovies.Infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoolMovies.Tests", "DotNetCoolMovies.Tests\DotNetCoolMovies.Tests.csproj", "{516161E1-1281-4DDA-96BC-EB6399070C20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoolMovies.ReactUI", "DotNetCoolMovies.ReactUI\DotNetCoolMovies.ReactUI.csproj", "{E8D0D11D-B206-4F9B-A6BE-A9F79D3AC8DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{516161E1-1281-4DDA-96BC-EB6399070C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{516161E1-1281-4DDA-96BC-EB6399070C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{516161E1-1281-4DDA-96BC-EB6399070C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D0D11D-B206-4F9B-A6BE-A9F79D3AC8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D0D11D-B206-4F9B-A6BE-A9F79D3AC8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D0D11D-B206-4F9B-A6BE-A9F79D3AC8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D0D11D-B206-4F9B-A6BE-A9F79D3AC8DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
